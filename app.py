@@ -506,7 +506,7 @@ if predict_clicked:
 
         with st.expander("🔧 See cleaned text sent to the model"):
             st.code(transformed_sms if transformed_sms else "(empty after cleaning)")
-
+ 
 st.markdown(
     "<div class='footer-note'>Built with Streamlit · TF-IDF + ML Classifier · Spam Shield</div>",
     unsafe_allow_html=True,
