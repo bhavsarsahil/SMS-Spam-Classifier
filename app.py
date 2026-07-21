@@ -168,12 +168,18 @@ html, body, [class*="css"] {
     text-align: center;
     font-size: 2.9rem;
     font-weight: 800;
+    margin-bottom: 0.2rem;
+    animation: popIn 0.7s ease-out;
+}
+
+.hero-title .title-gradient {
     background: linear-gradient(90deg, #00d2ff, #3a7bd5, #00d2ff);
     background-size: 200% auto;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine 4s linear infinite, popIn 0.7s ease-out;
-    margin-bottom: 0.2rem;
+    color: transparent;
+    animation: shine 4s linear infinite;
 }
 
 @keyframes shine { to { background-position: 200% center; } }
@@ -186,6 +192,7 @@ html, body, [class*="css"] {
 
 .shield-icon {
     display: inline-block;
+    margin-right: 0.35rem;
     animation: guard 2.4s ease-in-out infinite;
 }
 
@@ -401,7 +408,8 @@ with st.sidebar:
 # Hero header
 # ---------------------------------------------------------------------------
 st.markdown(
-    "<div class='hero-title'><span class='shield-icon'>🛡️</span> Spam Shield</div>",
+    "<div class='hero-title'><span class='shield-icon'>🛡️</span>"
+    "<span class='title-gradient'>Spam Shield</span></div>",
     unsafe_allow_html=True,
 )
 st.markdown(
@@ -506,7 +514,7 @@ if predict_clicked:
 
         with st.expander("🔧 See cleaned text sent to the model"):
             st.code(transformed_sms if transformed_sms else "(empty after cleaning)")
- 
+
 st.markdown(
     "<div class='footer-note'>Built with Streamlit · TF-IDF + ML Classifier · Spam Shield</div>",
     unsafe_allow_html=True,
